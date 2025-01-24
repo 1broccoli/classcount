@@ -1,6 +1,0 @@
-## Interface: 11403
-## Title: Class Count Addon
-## Author: Broccoli
-## Version: 1.0
-
-ClassCount.lua
