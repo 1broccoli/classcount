@@ -1,7 +1,7 @@
 ## Interface: 11403
 ## Title: Class Count Addon
 ## Author: Broccoli / pegga
-## Version: 1.2
+## Version: 1.2.1
 ## SavedVariables: ClassCountSettings
 ## Notes: Tracks the number of each class in the guild
 
