@@ -1,0 +1,8 @@
+## Interface: 11403
+## Title: Class Count Addon
+## Author: Broccoli / pegga
+## Version: 1.2
+## SavedVariables: ClassCountSettings
+## Notes: Tracks the number of each class in the guild
+
+ClassCount.lua
