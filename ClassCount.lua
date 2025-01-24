@@ -193,14 +193,21 @@ settingsFrame.title:SetPoint("TOP", 0, -10)
 settingsFrame.title:SetText("Class Count Settings")
 settingsFrame.title:SetTextColor(1, 0, 0)  -- Red color (RGB: 1, 0, 0)
 
--- Add a close button to the settings frame
-settingsFrame.closeButton = CreateFrame("Button", nil, settingsFrame, "UIPanelCloseButton")
-settingsFrame.closeButton:SetPoint("TOPRIGHT", -5, -5)
-settingsFrame.closeButton:SetNormalTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Up")
-settingsFrame.closeButton:SetPushedTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Down")
-settingsFrame.closeButton:SetHighlightTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight")
-settingsFrame.closeButton:SetScript("OnClick", function()
+-- Add a close texture to the settings frame
+settingsFrame.closeTexture = settingsFrame:CreateTexture(nil, "ARTWORK")
+settingsFrame.closeTexture:SetTexture("Interface\\AddOns\\ClassCount\\close.png")
+settingsFrame.closeTexture:SetSize(24, 24)
+settingsFrame.closeTexture:SetPoint("TOPRIGHT", -5, -5)
+settingsFrame.closeTexture:SetScript("OnMouseDown", function()
     settingsFrame:Hide()
+end)
+
+-- Highlight color to be red when mouse is over the close button
+settingsFrame.closeTexture:SetScript("OnEnter", function(self)
+    self:SetVertexColor(1, 0, 0)  -- Red color
+end)
+settingsFrame.closeTexture:SetScript("OnLeave", function(self)
+    self:SetVertexColor(1, 1, 1)  -- Reset to original color
 end)
 
 local function CreateSliderInputBox(slider, settingsFrame)
